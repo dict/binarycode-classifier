@@ -1,0 +1,2436 @@
+{
+    "traceEvents": [
+        {
+            "ph": "M",
+            "args": {
+                "name": "Allocators"
+            },
+            "pid": 0,
+            "name": "process_name"
+        },
+        {
+            "ph": "M",
+            "args": {
+                "name": "/job:localhost/replica:0/task:0/cpu:0 Compute"
+            },
+            "pid": 1,
+            "name": "process_name"
+        },
+        {
+            "ph": "M",
+            "args": {
+                "name": "/job:localhost/replica:0/task:0/cpu:0 Tensors"
+            },
+            "pid": 2,
+            "name": "process_name"
+        },
+        {
+            "ph": "M",
+            "args": {
+                "name": "/job:localhost/replica:0/task:0/gpu:0 Compute"
+            },
+            "pid": 3,
+            "name": "process_name"
+        },
+        {
+            "ph": "M",
+            "args": {
+                "name": "/job:localhost/replica:0/task:0/gpu:0 Tensors"
+            },
+            "pid": 4,
+            "name": "process_name"
+        },
+        {
+            "name": "NoOp",
+            "args": {
+                "name": "_SOURCE",
+                "op": "NoOp"
+            },
+            "pid": 1,
+            "ts": 1492152897349749,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "global_step",
+                "op": "VariableV2"
+            },
+            "pid": 1,
+            "ts": 1492152897349777,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "RandomShuffleQueueV2",
+            "args": {
+                "name": "shuffle_batch/random_shuffle_queue",
+                "op": "RandomShuffleQueueV2"
+            },
+            "pid": 1,
+            "ts": 1492152897349785,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 9
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "shuffle_batch/n",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1492152897349788,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 9
+        },
+        {
+            "name": "QueueDequeueManyV2",
+            "args": {
+                "input0": "shuffle_batch/random_shuffle_queue",
+                "input1": "shuffle_batch/n",
+                "name": "shuffle_batch",
+                "op": "QueueDequeueManyV2"
+            },
+            "pid": 1,
+            "ts": 1492152897349802,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 908475
+        },
+        {
+            "name": "shuffle_batch/n",
+            "pid": 1,
+            "ts": 1492152897349797,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 0
+        },
+        {
+            "name": "shuffle_batch/n",
+            "pid": 1,
+            "ts": 1492152897349802,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 0
+        },
+        {
+            "name": "InTopK",
+            "args": {
+                "input0": "TDNN/fully/logits/BiasAdd/_255",
+                "input1": "shuffle_batch:1",
+                "name": "InTopK",
+                "op": "InTopK"
+            },
+            "pid": 1,
+            "ts": 1492152898426133,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 678
+        },
+        {
+            "name": "TDNN/fully/logits/BiasAdd",
+            "pid": 3,
+            "ts": 1492152898287071,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 1
+        },
+        {
+            "name": "TDNN/fully/logits/BiasAdd",
+            "pid": 1,
+            "ts": 1492152898426133,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 1
+        },
+        {
+            "name": "NoOp",
+            "args": {
+                "name": "_SOURCE",
+                "op": "NoOp"
+            },
+            "pid": 3,
+            "ts": 1492152897349740,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 17
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/conv/conv0/weights",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349777,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 17
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/conv/conv0/biases",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349800,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/conv/conv1/weights",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349808,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/conv/conv1/biases",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349815,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/conv/conv2/weights",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349821,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/conv/conv2/biases",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349827,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/conv/conv3/weights",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349835,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/conv/conv3/biases",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349842,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/conv/conv4/weights",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349850,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/conv/conv4/biases",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349857,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "TDNN/conv/concat/axis",
+                "op": "Const"
+            },
+            "pid": 3,
+            "ts": 1492152897349863,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "TDNN/fully/Reshape/shape",
+                "op": "Const"
+            },
+            "pid": 3,
+            "ts": 1492152897349872,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/fully/fc1/weights",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349879,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/fully/fc1/biases",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349886,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/fully/BatchNorm/beta",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349894,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/fully/BatchNorm/gamma",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349902,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "TDNN/fully/BatchNorm/moments/Mean/reduction_indices",
+                "op": "Const"
+            },
+            "pid": 3,
+            "ts": 1492152897349909,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "TDNN/fully/BatchNorm/moments/sufficient_statistics/Const",
+                "op": "Const"
+            },
+            "pid": 3,
+            "ts": 1492152897349919,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "TDNN/fully/BatchNorm/moments/Shape",
+                "op": "Const"
+            },
+            "pid": 3,
+            "ts": 1492152897349926,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "TDNN/fully/BatchNorm/batchnorm/add/y",
+                "op": "Const"
+            },
+            "pid": 3,
+            "ts": 1492152897349934,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/fully/fc2/weights",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349941,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/fully/fc2/biases",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349949,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/fully/BatchNorm_1/beta",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349958,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/fully/BatchNorm_1/gamma",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349966,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "TDNN/fully/BatchNorm_1/moments/Shape",
+                "op": "Const"
+            },
+            "pid": 3,
+            "ts": 1492152897349973,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/fully/logits/weights",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349980,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "TDNN/fully/logits/biases",
+                "op": "VariableV2"
+            },
+            "pid": 3,
+            "ts": 1492152897349988,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/conv/conv0/weights",
+                "name": "TDNN/conv/conv0/weights/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897349995,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/conv/conv0/biases",
+                "name": "TDNN/conv/conv0/biases/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897350005,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/conv/conv1/weights",
+                "name": "TDNN/conv/conv1/weights/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897350013,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/conv/conv1/biases",
+                "name": "TDNN/conv/conv1/biases/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897350023,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/conv/conv2/weights",
+                "name": "TDNN/conv/conv2/weights/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897350031,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/conv/conv2/biases",
+                "name": "TDNN/conv/conv2/biases/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897350040,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/conv/conv3/weights",
+                "name": "TDNN/conv/conv3/weights/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897350048,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/conv/conv3/biases",
+                "name": "TDNN/conv/conv3/biases/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897350056,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/conv/conv4/weights",
+                "name": "TDNN/conv/conv4/weights/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897350064,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/conv/conv4/biases",
+                "name": "TDNN/conv/conv4/biases/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897350072,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/fully/fc1/weights",
+                "name": "TDNN/fully/fc1/weights/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897350079,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/fully/fc1/biases",
+                "name": "TDNN/fully/fc1/biases/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897350087,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm/beta",
+                "name": "TDNN/fully/BatchNorm/beta/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897350094,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm/gamma",
+                "name": "TDNN/fully/BatchNorm/gamma/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897350104,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/fully/fc2/weights",
+                "name": "TDNN/fully/fc2/weights/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897350113,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/fully/fc2/biases",
+                "name": "TDNN/fully/fc2/biases/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897350121,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm_1/beta",
+                "name": "TDNN/fully/BatchNorm_1/beta/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897350130,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm_1/gamma",
+                "name": "TDNN/fully/BatchNorm_1/gamma/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897350140,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/fully/logits/weights",
+                "name": "TDNN/fully/logits/weights/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897350147,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "TDNN/fully/logits/biases",
+                "name": "TDNN/fully/logits/biases/read",
+                "op": "Identity"
+            },
+            "pid": 3,
+            "ts": 1492152897350157,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Conv2D",
+            "args": {
+                "input0": "shuffle_batch/_253",
+                "input1": "TDNN/conv/conv0/weights/read",
+                "name": "TDNN/conv/conv0/convolution",
+                "op": "Conv2D"
+            },
+            "pid": 3,
+            "ts": 1492152898278681,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4044
+        },
+        {
+            "name": "shuffle_batch",
+            "pid": 1,
+            "ts": 1492152898258277,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 2
+        },
+        {
+            "name": "shuffle_batch",
+            "pid": 3,
+            "ts": 1492152898278681,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 2
+        },
+        {
+            "name": "Conv2D",
+            "args": {
+                "input0": "shuffle_batch/_253",
+                "input1": "TDNN/conv/conv3/weights/read",
+                "name": "TDNN/conv/conv3/convolution",
+                "op": "Conv2D"
+            },
+            "pid": 3,
+            "ts": 1492152898278692,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 4313
+        },
+        {
+            "name": "shuffle_batch",
+            "pid": 1,
+            "ts": 1492152898258277,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 3
+        },
+        {
+            "name": "shuffle_batch",
+            "pid": 3,
+            "ts": 1492152898278692,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 3
+        },
+        {
+            "name": "TDNN/conv/conv3/weights/read",
+            "pid": 3,
+            "ts": 1492152897350053,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 4
+        },
+        {
+            "name": "TDNN/conv/conv3/weights/read",
+            "pid": 3,
+            "ts": 1492152898278692,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 4
+        },
+        {
+            "name": "BiasAdd",
+            "args": {
+                "input0": "TDNN/conv/conv0/convolution",
+                "input1": "TDNN/conv/conv0/biases/read",
+                "name": "TDNN/conv/conv0/BiasAdd",
+                "op": "BiasAdd"
+            },
+            "pid": 3,
+            "ts": 1492152898282761,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 279
+        },
+        {
+            "name": "Relu",
+            "args": {
+                "input0": "TDNN/conv/conv0/BiasAdd",
+                "name": "TDNN/conv/conv0/Relu",
+                "op": "Relu"
+            },
+            "pid": 3,
+            "ts": 1492152898283052,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 66
+        },
+        {
+            "name": "BiasAdd",
+            "args": {
+                "input0": "TDNN/conv/conv3/convolution",
+                "input1": "TDNN/conv/conv3/biases/read",
+                "name": "TDNN/conv/conv3/BiasAdd",
+                "op": "BiasAdd"
+            },
+            "pid": 3,
+            "ts": 1492152898283029,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 667
+        },
+        {
+            "name": "TDNN/conv/conv3/biases/read",
+            "pid": 3,
+            "ts": 1492152897350060,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 5
+        },
+        {
+            "name": "TDNN/conv/conv3/biases/read",
+            "pid": 3,
+            "ts": 1492152898283029,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 5
+        },
+        {
+            "name": "Conv2D",
+            "args": {
+                "input0": "shuffle_batch/_253",
+                "input1": "TDNN/conv/conv4/weights/read",
+                "name": "TDNN/conv/conv4/convolution",
+                "op": "Conv2D"
+            },
+            "pid": 3,
+            "ts": 1492152898278725,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 5199
+        },
+        {
+            "name": "shuffle_batch",
+            "pid": 1,
+            "ts": 1492152898258277,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 6
+        },
+        {
+            "name": "shuffle_batch",
+            "pid": 3,
+            "ts": 1492152898278725,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 6
+        },
+        {
+            "name": "TDNN/conv/conv4/weights/read",
+            "pid": 3,
+            "ts": 1492152897350069,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 7
+        },
+        {
+            "name": "TDNN/conv/conv4/weights/read",
+            "pid": 3,
+            "ts": 1492152898278725,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 7
+        },
+        {
+            "name": "Relu",
+            "args": {
+                "input0": "TDNN/conv/conv3/BiasAdd",
+                "name": "TDNN/conv/conv3/Relu",
+                "op": "Relu"
+            },
+            "pid": 3,
+            "ts": 1492152898283727,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 216
+        },
+        {
+            "name": "TDNN/conv/conv3/BiasAdd",
+            "pid": 3,
+            "ts": 1492152898283696,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 8
+        },
+        {
+            "name": "TDNN/conv/conv3/BiasAdd",
+            "pid": 3,
+            "ts": 1492152898283727,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 8
+        },
+        {
+            "name": "BiasAdd",
+            "args": {
+                "input0": "TDNN/conv/conv4/convolution",
+                "input1": "TDNN/conv/conv4/biases/read",
+                "name": "TDNN/conv/conv4/BiasAdd",
+                "op": "BiasAdd"
+            },
+            "pid": 3,
+            "ts": 1492152898283950,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 60
+        },
+        {
+            "name": "TDNN/conv/conv4/convolution",
+            "pid": 3,
+            "ts": 1492152898283924,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 9
+        },
+        {
+            "name": "TDNN/conv/conv4/convolution",
+            "pid": 3,
+            "ts": 1492152898283950,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 9
+        },
+        {
+            "name": "Conv2D",
+            "args": {
+                "input0": "shuffle_batch/_253",
+                "input1": "TDNN/conv/conv1/weights/read",
+                "name": "TDNN/conv/conv1/convolution",
+                "op": "Conv2D"
+            },
+            "pid": 3,
+            "ts": 1492152898278684,
+            "cat": "Op",
+            "tid": 3,
+            "ph": "X",
+            "dur": 5387
+        },
+        {
+            "name": "shuffle_batch",
+            "pid": 1,
+            "ts": 1492152898258277,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 10
+        },
+        {
+            "name": "shuffle_batch",
+            "pid": 3,
+            "ts": 1492152898278684,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "t",
+            "id": 10
+        },
+        {
+            "name": "TDNN/conv/conv1/weights/read",
+            "pid": 3,
+            "ts": 1492152897350019,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 11
+        },
+        {
+            "name": "TDNN/conv/conv1/weights/read",
+            "pid": 3,
+            "ts": 1492152898278684,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "t",
+            "id": 11
+        },
+        {
+            "name": "MaxPool",
+            "args": {
+                "input0": "TDNN/conv/conv0/Relu",
+                "name": "TDNN/conv/pool0/MaxPool",
+                "op": "MaxPool"
+            },
+            "pid": 3,
+            "ts": 1492152898283138,
+            "cat": "Op",
+            "tid": 4,
+            "ph": "X",
+            "dur": 969
+        },
+        {
+            "name": "TDNN/conv/conv0/Relu",
+            "pid": 3,
+            "ts": 1492152898283118,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 12
+        },
+        {
+            "name": "TDNN/conv/conv0/Relu",
+            "pid": 3,
+            "ts": 1492152898283138,
+            "cat": "DataFlow",
+            "tid": 4,
+            "ph": "t",
+            "id": 12
+        },
+        {
+            "name": "Squeeze",
+            "args": {
+                "input0": "TDNN/conv/pool0/MaxPool",
+                "name": "TDNN/conv/Squeeze",
+                "op": "Squeeze"
+            },
+            "pid": 3,
+            "ts": 1492152898284112,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 11
+        },
+        {
+            "name": "TDNN/conv/pool0/MaxPool",
+            "pid": 3,
+            "ts": 1492152898284107,
+            "cat": "DataFlow",
+            "tid": 4,
+            "ph": "s",
+            "id": 13
+        },
+        {
+            "name": "TDNN/conv/pool0/MaxPool",
+            "pid": 3,
+            "ts": 1492152898284112,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 13
+        },
+        {
+            "name": "Relu",
+            "args": {
+                "input0": "TDNN/conv/conv4/BiasAdd",
+                "name": "TDNN/conv/conv4/Relu",
+                "op": "Relu"
+            },
+            "pid": 3,
+            "ts": 1492152898284016,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 142
+        },
+        {
+            "name": "TDNN/conv/conv4/BiasAdd",
+            "pid": 3,
+            "ts": 1492152898284010,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 14
+        },
+        {
+            "name": "TDNN/conv/conv4/BiasAdd",
+            "pid": 3,
+            "ts": 1492152898284016,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 14
+        },
+        {
+            "name": "MaxPool",
+            "args": {
+                "input0": "TDNN/conv/conv3/Relu",
+                "name": "TDNN/conv/pool3/MaxPool",
+                "op": "MaxPool"
+            },
+            "pid": 3,
+            "ts": 1492152898283952,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 253
+        },
+        {
+            "name": "TDNN/conv/conv3/Relu",
+            "pid": 3,
+            "ts": 1492152898283943,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 15
+        },
+        {
+            "name": "TDNN/conv/conv3/Relu",
+            "pid": 3,
+            "ts": 1492152898283952,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 15
+        },
+        {
+            "name": "Squeeze",
+            "args": {
+                "input0": "TDNN/conv/pool3/MaxPool",
+                "name": "TDNN/conv/Squeeze_3",
+                "op": "Squeeze"
+            },
+            "pid": 3,
+            "ts": 1492152898284211,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 12
+        },
+        {
+            "name": "TDNN/conv/pool3/MaxPool",
+            "pid": 3,
+            "ts": 1492152898284205,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 16
+        },
+        {
+            "name": "TDNN/conv/pool3/MaxPool",
+            "pid": 3,
+            "ts": 1492152898284211,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 16
+        },
+        {
+            "name": "BiasAdd",
+            "args": {
+                "input0": "TDNN/conv/conv1/convolution",
+                "input1": "TDNN/conv/conv1/biases/read",
+                "name": "TDNN/conv/conv1/BiasAdd",
+                "op": "BiasAdd"
+            },
+            "pid": 3,
+            "ts": 1492152898284088,
+            "cat": "Op",
+            "tid": 3,
+            "ph": "X",
+            "dur": 274
+        },
+        {
+            "name": "TDNN/conv/conv1/biases/read",
+            "pid": 3,
+            "ts": 1492152897350028,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 17
+        },
+        {
+            "name": "TDNN/conv/conv1/biases/read",
+            "pid": 3,
+            "ts": 1492152898284088,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "t",
+            "id": 17
+        },
+        {
+            "name": "MaxPool",
+            "args": {
+                "input0": "TDNN/conv/conv4/Relu",
+                "name": "TDNN/conv/pool4/MaxPool",
+                "op": "MaxPool"
+            },
+            "pid": 3,
+            "ts": 1492152898284165,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 214
+        },
+        {
+            "name": "Squeeze",
+            "args": {
+                "input0": "TDNN/conv/pool4/MaxPool",
+                "name": "TDNN/conv/Squeeze_4",
+                "op": "Squeeze"
+            },
+            "pid": 3,
+            "ts": 1492152898284405,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 16
+        },
+        {
+            "name": "TDNN/conv/pool4/MaxPool",
+            "pid": 3,
+            "ts": 1492152898284379,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 18
+        },
+        {
+            "name": "TDNN/conv/pool4/MaxPool",
+            "pid": 3,
+            "ts": 1492152898284405,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 18
+        },
+        {
+            "name": "Relu",
+            "args": {
+                "input0": "TDNN/conv/conv1/BiasAdd",
+                "name": "TDNN/conv/conv1/Relu",
+                "op": "Relu"
+            },
+            "pid": 3,
+            "ts": 1492152898284398,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 62
+        },
+        {
+            "name": "TDNN/conv/conv1/BiasAdd",
+            "pid": 3,
+            "ts": 1492152898284362,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "s",
+            "id": 19
+        },
+        {
+            "name": "TDNN/conv/conv1/BiasAdd",
+            "pid": 3,
+            "ts": 1492152898284398,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 19
+        },
+        {
+            "name": "Conv2D",
+            "args": {
+                "input0": "shuffle_batch/_253",
+                "input1": "TDNN/conv/conv2/weights/read",
+                "name": "TDNN/conv/conv2/convolution",
+                "op": "Conv2D"
+            },
+            "pid": 3,
+            "ts": 1492152898278690,
+            "cat": "Op",
+            "tid": 5,
+            "ph": "X",
+            "dur": 5853
+        },
+        {
+            "name": "shuffle_batch",
+            "pid": 1,
+            "ts": 1492152898258277,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 20
+        },
+        {
+            "name": "shuffle_batch",
+            "pid": 3,
+            "ts": 1492152898278690,
+            "cat": "DataFlow",
+            "tid": 5,
+            "ph": "t",
+            "id": 20
+        },
+        {
+            "name": "TDNN/conv/conv2/weights/read",
+            "pid": 3,
+            "ts": 1492152897350037,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 21
+        },
+        {
+            "name": "TDNN/conv/conv2/weights/read",
+            "pid": 3,
+            "ts": 1492152898278690,
+            "cat": "DataFlow",
+            "tid": 5,
+            "ph": "t",
+            "id": 21
+        },
+        {
+            "name": "BiasAdd",
+            "args": {
+                "input0": "TDNN/conv/conv2/convolution",
+                "input1": "TDNN/conv/conv2/biases/read",
+                "name": "TDNN/conv/conv2/BiasAdd",
+                "op": "BiasAdd"
+            },
+            "pid": 3,
+            "ts": 1492152898284566,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 69
+        },
+        {
+            "name": "TDNN/conv/conv2/convolution",
+            "pid": 3,
+            "ts": 1492152898284543,
+            "cat": "DataFlow",
+            "tid": 5,
+            "ph": "s",
+            "id": 22
+        },
+        {
+            "name": "TDNN/conv/conv2/convolution",
+            "pid": 3,
+            "ts": 1492152898284566,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 22
+        },
+        {
+            "name": "Relu",
+            "args": {
+                "input0": "TDNN/conv/conv2/BiasAdd",
+                "name": "TDNN/conv/conv2/Relu",
+                "op": "Relu"
+            },
+            "pid": 3,
+            "ts": 1492152898284643,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 34
+        },
+        {
+            "name": "MaxPool",
+            "args": {
+                "input0": "TDNN/conv/conv1/Relu",
+                "name": "TDNN/conv/pool1/MaxPool",
+                "op": "MaxPool"
+            },
+            "pid": 3,
+            "ts": 1492152898284467,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 270
+        },
+        {
+            "name": "Squeeze",
+            "args": {
+                "input0": "TDNN/conv/pool1/MaxPool",
+                "name": "TDNN/conv/Squeeze_1",
+                "op": "Squeeze"
+            },
+            "pid": 3,
+            "ts": 1492152898284742,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 10
+        },
+        {
+            "name": "TDNN/conv/pool1/MaxPool",
+            "pid": 3,
+            "ts": 1492152898284737,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 23
+        },
+        {
+            "name": "TDNN/conv/pool1/MaxPool",
+            "pid": 3,
+            "ts": 1492152898284742,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 23
+        },
+        {
+            "name": "MaxPool",
+            "args": {
+                "input0": "TDNN/conv/conv2/Relu",
+                "name": "TDNN/conv/pool2/MaxPool",
+                "op": "MaxPool"
+            },
+            "pid": 3,
+            "ts": 1492152898284684,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 130
+        },
+        {
+            "name": "TDNN/conv/conv2/Relu",
+            "pid": 3,
+            "ts": 1492152898284677,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 24
+        },
+        {
+            "name": "TDNN/conv/conv2/Relu",
+            "pid": 3,
+            "ts": 1492152898284684,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 24
+        },
+        {
+            "name": "Squeeze",
+            "args": {
+                "input0": "TDNN/conv/pool2/MaxPool",
+                "name": "TDNN/conv/Squeeze_2",
+                "op": "Squeeze"
+            },
+            "pid": 3,
+            "ts": 1492152898284819,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 9
+        },
+        {
+            "name": "TDNN/conv/pool2/MaxPool",
+            "pid": 3,
+            "ts": 1492152898284814,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 25
+        },
+        {
+            "name": "TDNN/conv/pool2/MaxPool",
+            "pid": 3,
+            "ts": 1492152898284819,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 25
+        },
+        {
+            "name": "ConcatV2",
+            "args": {
+                "input2": "TDNN/conv/Squeeze_2",
+                "input3": "TDNN/conv/Squeeze_3",
+                "input0": "TDNN/conv/Squeeze",
+                "input1": "TDNN/conv/Squeeze_1",
+                "name": "TDNN/conv/concat",
+                "input4": "TDNN/conv/Squeeze_4",
+                "input5": "TDNN/conv/concat/axis",
+                "op": "ConcatV2"
+            },
+            "pid": 3,
+            "ts": 1492152898284831,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 203
+        },
+        {
+            "name": "Reshape",
+            "args": {
+                "input0": "TDNN/conv/concat",
+                "input1": "TDNN/fully/Reshape/shape",
+                "name": "TDNN/fully/Reshape",
+                "op": "Reshape"
+            },
+            "pid": 3,
+            "ts": 1492152898285040,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "MatMul",
+            "args": {
+                "input0": "TDNN/fully/Reshape",
+                "input1": "TDNN/fully/fc1/weights/read",
+                "name": "TDNN/fully/fc1/MatMul",
+                "op": "MatMul"
+            },
+            "pid": 3,
+            "ts": 1492152898285051,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 358
+        },
+        {
+            "name": "BiasAdd",
+            "args": {
+                "input0": "TDNN/fully/fc1/MatMul",
+                "input1": "TDNN/fully/fc1/biases/read",
+                "name": "TDNN/fully/fc1/BiasAdd",
+                "op": "BiasAdd"
+            },
+            "pid": 3,
+            "ts": 1492152898285427,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 55
+        },
+        {
+            "name": "Relu",
+            "args": {
+                "input0": "TDNN/fully/fc1/BiasAdd",
+                "name": "TDNN/fully/fc1/Relu",
+                "op": "Relu"
+            },
+            "pid": 3,
+            "ts": 1492152898285487,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 32
+        },
+        {
+            "name": "Mean",
+            "args": {
+                "input0": "TDNN/fully/fc1/Relu",
+                "input1": "TDNN/fully/BatchNorm/moments/Mean/reduction_indices",
+                "name": "TDNN/fully/BatchNorm/moments/Mean",
+                "op": "Mean"
+            },
+            "pid": 3,
+            "ts": 1492152898285523,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 43
+        },
+        {
+            "name": "StopGradient",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm/moments/Mean",
+                "name": "TDNN/fully/BatchNorm/moments/StopGradient",
+                "op": "StopGradient"
+            },
+            "pid": 3,
+            "ts": 1492152898285569,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Sub",
+            "args": {
+                "input0": "TDNN/fully/fc1/Relu",
+                "input1": "TDNN/fully/BatchNorm/moments/StopGradient",
+                "name": "TDNN/fully/BatchNorm/moments/sufficient_statistics/Sub",
+                "op": "Sub"
+            },
+            "pid": 3,
+            "ts": 1492152898285578,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 41
+        },
+        {
+            "name": "SquaredDifference",
+            "args": {
+                "input0": "TDNN/fully/fc1/Relu",
+                "input1": "TDNN/fully/BatchNorm/moments/StopGradient",
+                "name": "TDNN/fully/BatchNorm/moments/sufficient_statistics/SquaredDifference",
+                "op": "SquaredDifference"
+            },
+            "pid": 3,
+            "ts": 1492152898285624,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 39
+        },
+        {
+            "name": "Reshape",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm/moments/StopGradient",
+                "input1": "TDNN/fully/BatchNorm/moments/Shape",
+                "name": "TDNN/fully/BatchNorm/moments/Reshape",
+                "op": "Reshape"
+            },
+            "pid": 3,
+            "ts": 1492152898285668,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Sum",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm/moments/sufficient_statistics/Sub",
+                "input1": "TDNN/fully/BatchNorm/moments/sufficient_statistics/mean_ss/reduction_indices",
+                "name": "TDNN/fully/BatchNorm/moments/sufficient_statistics/mean_ss",
+                "op": "Sum"
+            },
+            "pid": 3,
+            "ts": 1492152898285676,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 62
+        },
+        {
+            "name": "Sum",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm/moments/sufficient_statistics/SquaredDifference",
+                "input1": "TDNN/fully/BatchNorm/moments/sufficient_statistics/var_ss/reduction_indices",
+                "name": "TDNN/fully/BatchNorm/moments/sufficient_statistics/var_ss",
+                "op": "Sum"
+            },
+            "pid": 3,
+            "ts": 1492152898285742,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 35
+        },
+        {
+            "name": "Reciprocal",
+            "args": {
+                "input2": "^TDNN/fully/BatchNorm/moments/sufficient_statistics/var_ss",
+                "input0": "TDNN/fully/BatchNorm/moments/sufficient_statistics/Const",
+                "input1": "^TDNN/fully/BatchNorm/moments/sufficient_statistics/mean_ss",
+                "name": "TDNN/fully/BatchNorm/moments/normalize/divisor",
+                "op": "Reciprocal"
+            },
+            "pid": 3,
+            "ts": 1492152898285780,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 32
+        },
+        {
+            "name": "Mul",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm/moments/sufficient_statistics/mean_ss",
+                "input1": "TDNN/fully/BatchNorm/moments/normalize/divisor",
+                "name": "TDNN/fully/BatchNorm/moments/normalize/shifted_mean",
+                "op": "Mul"
+            },
+            "pid": 3,
+            "ts": 1492152898285816,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 35
+        },
+        {
+            "name": "Mul",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm/moments/sufficient_statistics/var_ss",
+                "input1": "TDNN/fully/BatchNorm/moments/normalize/divisor",
+                "name": "TDNN/fully/BatchNorm/moments/normalize/Mul",
+                "op": "Mul"
+            },
+            "pid": 3,
+            "ts": 1492152898285866,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 31
+        },
+        {
+            "name": "Square",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm/moments/normalize/shifted_mean",
+                "name": "TDNN/fully/BatchNorm/moments/normalize/Square",
+                "op": "Square"
+            },
+            "pid": 3,
+            "ts": 1492152898285900,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 28
+        },
+        {
+            "name": "Add",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm/moments/normalize/shifted_mean",
+                "input1": "TDNN/fully/BatchNorm/moments/Reshape",
+                "name": "TDNN/fully/BatchNorm/moments/normalize/mean",
+                "op": "Add"
+            },
+            "pid": 3,
+            "ts": 1492152898285931,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 33
+        },
+        {
+            "name": "Sub",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm/moments/normalize/Mul",
+                "input1": "TDNN/fully/BatchNorm/moments/normalize/Square",
+                "name": "TDNN/fully/BatchNorm/moments/normalize/variance",
+                "op": "Sub"
+            },
+            "pid": 3,
+            "ts": 1492152898285967,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 44
+        },
+        {
+            "name": "Add",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm/moments/normalize/variance",
+                "input1": "TDNN/fully/BatchNorm/batchnorm/add/y",
+                "name": "TDNN/fully/BatchNorm/batchnorm/add",
+                "op": "Add"
+            },
+            "pid": 3,
+            "ts": 1492152898286014,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 33
+        },
+        {
+            "name": "Rsqrt",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm/batchnorm/add",
+                "name": "TDNN/fully/BatchNorm/batchnorm/Rsqrt",
+                "op": "Rsqrt"
+            },
+            "pid": 3,
+            "ts": 1492152898286050,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 32
+        },
+        {
+            "name": "Mul",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm/batchnorm/Rsqrt",
+                "input1": "TDNN/fully/BatchNorm/gamma/read",
+                "name": "TDNN/fully/BatchNorm/batchnorm/mul",
+                "op": "Mul"
+            },
+            "pid": 3,
+            "ts": 1492152898286085,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 38
+        },
+        {
+            "name": "Mul",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm/moments/normalize/mean",
+                "input1": "TDNN/fully/BatchNorm/batchnorm/mul",
+                "name": "TDNN/fully/BatchNorm/batchnorm/mul_2",
+                "op": "Mul"
+            },
+            "pid": 3,
+            "ts": 1492152898286126,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 43
+        },
+        {
+            "name": "Mul",
+            "args": {
+                "input0": "TDNN/fully/fc1/Relu",
+                "input1": "TDNN/fully/BatchNorm/batchnorm/mul",
+                "name": "TDNN/fully/BatchNorm/batchnorm/mul_1",
+                "op": "Mul"
+            },
+            "pid": 3,
+            "ts": 1492152898286172,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 40
+        },
+        {
+            "name": "Sub",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm/beta/read",
+                "input1": "TDNN/fully/BatchNorm/batchnorm/mul_2",
+                "name": "TDNN/fully/BatchNorm/batchnorm/sub",
+                "op": "Sub"
+            },
+            "pid": 3,
+            "ts": 1492152898286219,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 31
+        },
+        {
+            "name": "Add",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm/batchnorm/mul_1",
+                "input1": "TDNN/fully/BatchNorm/batchnorm/sub",
+                "name": "TDNN/fully/BatchNorm/batchnorm/add_1",
+                "op": "Add"
+            },
+            "pid": 3,
+            "ts": 1492152898286252,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 30
+        },
+        {
+            "name": "Relu",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm/batchnorm/add_1",
+                "name": "TDNN/fully/BatchNorm/Relu",
+                "op": "Relu"
+            },
+            "pid": 3,
+            "ts": 1492152898286286,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 30
+        },
+        {
+            "name": "MatMul",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm/Relu",
+                "input1": "TDNN/fully/fc2/weights/read",
+                "name": "TDNN/fully/fc2/MatMul",
+                "op": "MatMul"
+            },
+            "pid": 3,
+            "ts": 1492152898286320,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 36
+        },
+        {
+            "name": "BiasAdd",
+            "args": {
+                "input0": "TDNN/fully/fc2/MatMul",
+                "input1": "TDNN/fully/fc2/biases/read",
+                "name": "TDNN/fully/fc2/BiasAdd",
+                "op": "BiasAdd"
+            },
+            "pid": 3,
+            "ts": 1492152898286358,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 29
+        },
+        {
+            "name": "Relu",
+            "args": {
+                "input0": "TDNN/fully/fc2/BiasAdd",
+                "name": "TDNN/fully/fc2/Relu",
+                "op": "Relu"
+            },
+            "pid": 3,
+            "ts": 1492152898286389,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 25
+        },
+        {
+            "name": "Mean",
+            "args": {
+                "input0": "TDNN/fully/fc2/Relu",
+                "input1": "TDNN/fully/BatchNorm_1/moments/Mean/reduction_indices",
+                "name": "TDNN/fully/BatchNorm_1/moments/Mean",
+                "op": "Mean"
+            },
+            "pid": 3,
+            "ts": 1492152898286417,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 32
+        },
+        {
+            "name": "StopGradient",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm_1/moments/Mean",
+                "name": "TDNN/fully/BatchNorm_1/moments/StopGradient",
+                "op": "StopGradient"
+            },
+            "pid": 3,
+            "ts": 1492152898286452,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Sub",
+            "args": {
+                "input0": "TDNN/fully/fc2/Relu",
+                "input1": "TDNN/fully/BatchNorm_1/moments/StopGradient",
+                "name": "TDNN/fully/BatchNorm_1/moments/sufficient_statistics/Sub",
+                "op": "Sub"
+            },
+            "pid": 3,
+            "ts": 1492152898286459,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 27
+        },
+        {
+            "name": "SquaredDifference",
+            "args": {
+                "input0": "TDNN/fully/fc2/Relu",
+                "input1": "TDNN/fully/BatchNorm_1/moments/StopGradient",
+                "name": "TDNN/fully/BatchNorm_1/moments/sufficient_statistics/SquaredDifference",
+                "op": "SquaredDifference"
+            },
+            "pid": 3,
+            "ts": 1492152898286489,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 28
+        },
+        {
+            "name": "Reshape",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm_1/moments/StopGradient",
+                "input1": "TDNN/fully/BatchNorm_1/moments/Shape",
+                "name": "TDNN/fully/BatchNorm_1/moments/Reshape",
+                "op": "Reshape"
+            },
+            "pid": 3,
+            "ts": 1492152898286520,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "Sum",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm_1/moments/sufficient_statistics/Sub",
+                "input1": "TDNN/fully/BatchNorm_1/moments/sufficient_statistics/mean_ss/reduction_indices",
+                "name": "TDNN/fully/BatchNorm_1/moments/sufficient_statistics/mean_ss",
+                "op": "Sum"
+            },
+            "pid": 3,
+            "ts": 1492152898286527,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 31
+        },
+        {
+            "name": "Sum",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm_1/moments/sufficient_statistics/SquaredDifference",
+                "input1": "TDNN/fully/BatchNorm_1/moments/sufficient_statistics/var_ss/reduction_indices",
+                "name": "TDNN/fully/BatchNorm_1/moments/sufficient_statistics/var_ss",
+                "op": "Sum"
+            },
+            "pid": 3,
+            "ts": 1492152898286561,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 29
+        },
+        {
+            "name": "Reciprocal",
+            "args": {
+                "input2": "^TDNN/fully/BatchNorm_1/moments/sufficient_statistics/var_ss",
+                "input0": "TDNN/fully/BatchNorm_1/moments/sufficient_statistics/Const",
+                "input1": "^TDNN/fully/BatchNorm_1/moments/sufficient_statistics/mean_ss",
+                "name": "TDNN/fully/BatchNorm_1/moments/normalize/divisor",
+                "op": "Reciprocal"
+            },
+            "pid": 3,
+            "ts": 1492152898286593,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 24
+        },
+        {
+            "name": "Mul",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm_1/moments/sufficient_statistics/mean_ss",
+                "input1": "TDNN/fully/BatchNorm_1/moments/normalize/divisor",
+                "name": "TDNN/fully/BatchNorm_1/moments/normalize/shifted_mean",
+                "op": "Mul"
+            },
+            "pid": 3,
+            "ts": 1492152898286621,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 27
+        },
+        {
+            "name": "Mul",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm_1/moments/sufficient_statistics/var_ss",
+                "input1": "TDNN/fully/BatchNorm_1/moments/normalize/divisor",
+                "name": "TDNN/fully/BatchNorm_1/moments/normalize/Mul",
+                "op": "Mul"
+            },
+            "pid": 3,
+            "ts": 1492152898286651,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 24
+        },
+        {
+            "name": "Square",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm_1/moments/normalize/shifted_mean",
+                "name": "TDNN/fully/BatchNorm_1/moments/normalize/Square",
+                "op": "Square"
+            },
+            "pid": 3,
+            "ts": 1492152898286678,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 26
+        },
+        {
+            "name": "Add",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm_1/moments/normalize/shifted_mean",
+                "input1": "TDNN/fully/BatchNorm_1/moments/Reshape",
+                "name": "TDNN/fully/BatchNorm_1/moments/normalize/mean",
+                "op": "Add"
+            },
+            "pid": 3,
+            "ts": 1492152898286707,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 29
+        },
+        {
+            "name": "Sub",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm_1/moments/normalize/Mul",
+                "input1": "TDNN/fully/BatchNorm_1/moments/normalize/Square",
+                "name": "TDNN/fully/BatchNorm_1/moments/normalize/variance",
+                "op": "Sub"
+            },
+            "pid": 3,
+            "ts": 1492152898286738,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 27
+        },
+        {
+            "name": "Add",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm_1/moments/normalize/variance",
+                "input1": "TDNN/fully/BatchNorm_1/batchnorm/add/y",
+                "name": "TDNN/fully/BatchNorm_1/batchnorm/add",
+                "op": "Add"
+            },
+            "pid": 3,
+            "ts": 1492152898286768,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 26
+        },
+        {
+            "name": "Rsqrt",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm_1/batchnorm/add",
+                "name": "TDNN/fully/BatchNorm_1/batchnorm/Rsqrt",
+                "op": "Rsqrt"
+            },
+            "pid": 3,
+            "ts": 1492152898286796,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 28
+        },
+        {
+            "name": "Mul",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm_1/batchnorm/Rsqrt",
+                "input1": "TDNN/fully/BatchNorm_1/gamma/read",
+                "name": "TDNN/fully/BatchNorm_1/batchnorm/mul",
+                "op": "Mul"
+            },
+            "pid": 3,
+            "ts": 1492152898286826,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 28
+        },
+        {
+            "name": "Mul",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm_1/moments/normalize/mean",
+                "input1": "TDNN/fully/BatchNorm_1/batchnorm/mul",
+                "name": "TDNN/fully/BatchNorm_1/batchnorm/mul_2",
+                "op": "Mul"
+            },
+            "pid": 3,
+            "ts": 1492152898286857,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 23
+        },
+        {
+            "name": "Mul",
+            "args": {
+                "input0": "TDNN/fully/fc2/Relu",
+                "input1": "TDNN/fully/BatchNorm_1/batchnorm/mul",
+                "name": "TDNN/fully/BatchNorm_1/batchnorm/mul_1",
+                "op": "Mul"
+            },
+            "pid": 3,
+            "ts": 1492152898286883,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 27
+        },
+        {
+            "name": "Sub",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm_1/beta/read",
+                "input1": "TDNN/fully/BatchNorm_1/batchnorm/mul_2",
+                "name": "TDNN/fully/BatchNorm_1/batchnorm/sub",
+                "op": "Sub"
+            },
+            "pid": 3,
+            "ts": 1492152898286913,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 28
+        },
+        {
+            "name": "Add",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm_1/batchnorm/mul_1",
+                "input1": "TDNN/fully/BatchNorm_1/batchnorm/sub",
+                "name": "TDNN/fully/BatchNorm_1/batchnorm/add_1",
+                "op": "Add"
+            },
+            "pid": 3,
+            "ts": 1492152898286944,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 29
+        },
+        {
+            "name": "Relu",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm_1/batchnorm/add_1",
+                "name": "TDNN/fully/BatchNorm_1/Relu",
+                "op": "Relu"
+            },
+            "pid": 3,
+            "ts": 1492152898286975,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 26
+        },
+        {
+            "name": "MatMul",
+            "args": {
+                "input0": "TDNN/fully/BatchNorm_1/Relu",
+                "input1": "TDNN/fully/logits/weights/read",
+                "name": "TDNN/fully/logits/MatMul",
+                "op": "MatMul"
+            },
+            "pid": 3,
+            "ts": 1492152898287003,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 34
+        },
+        {
+            "name": "BiasAdd",
+            "args": {
+                "input0": "TDNN/fully/logits/MatMul",
+                "input1": "TDNN/fully/logits/biases/read",
+                "name": "TDNN/fully/logits/BiasAdd",
+                "op": "BiasAdd"
+            },
+            "pid": 3,
+            "ts": 1492152898287042,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 29
+        },
+        {
+            "name": "ArgMax",
+            "args": {
+                "input0": "TDNN/fully/logits/BiasAdd",
+                "input1": "ArgMax/dimension",
+                "name": "ArgMax",
+                "op": "ArgMax"
+            },
+            "pid": 3,
+            "ts": 1492152898287158,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 40
+        },
+        {
+            "name": "Cast",
+            "args": {
+                "input0": "InTopK/_257",
+                "name": "Cast_16",
+                "op": "Cast"
+            },
+            "pid": 3,
+            "ts": 1492152898428355,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 97
+        },
+        {
+            "name": "InTopK",
+            "pid": 1,
+            "ts": 1492152898426811,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 26
+        },
+        {
+            "name": "InTopK",
+            "pid": 3,
+            "ts": 1492152898428355,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 26
+        },
+        {
+            "name": "Mean",
+            "args": {
+                "input0": "Cast_16",
+                "input1": "Const",
+                "name": "Mean",
+                "op": "Mean"
+            },
+            "pid": 3,
+            "ts": 1492152898428458,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 110
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+python main.py \
+--epoch 10000 \
+--batch_size 16 \
+--classes_num 10001 \
+--model "TDNN" \
+--data_dir "/data/dict/PE" \
+--preprocessor "sequence" \
+--label_query "select family from family_list where type='Win32 EXE' order by num desc limit 1000" \
+--data_query "select md5, family from win32_train_list where entry > 0 order by md5" \
+--data_type "db" \
+--dropout_prob 1 \
+--learning_rate 0.0001 \
+--dataset "raw" \
+--GPU "0,1,2" \
+--feature_maps "[100,200,300,400,500]" \
+--kernels "[2,4,6,8,10]" \
+--binary_embed_width 32 \
+--binary_embed_height 24000 \
+--checkpoint_dir "/data/dict/refactoring/checkpoint_ccnn_0412/1/" \
+--forward_only False

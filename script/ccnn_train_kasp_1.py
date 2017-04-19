@@ -1,0 +1,20 @@
+python main.py \
+--epoch 10000 \
+--batch_size 16 \
+--classes_num 414 \
+--model "TDNN" \
+--data_dir "/data/files/vato_clone/VIRUSCRAWLER/storage/Win32 EXE" \
+--preprocessor "sequence" \
+--label_query "select * from kaspersky_labels where c > 4" \
+--data_query "select t.md5, s.Kaspersky, t.family from sp_list_new as s join win32_train_list_clone as t on s.md5 = t.md5 order by t.md5" \
+--data_type "db" \
+--dropout_prob 0.5 \
+--learning_rate 0.0001 \
+--dataset "raw" \
+--GPU "2,3" \
+--feature_maps "[100,200,300,400,500]" \
+--kernels "[2,4,6,8,10]" \
+--binary_embed_width 32 \
+--binary_embed_height 36000 \
+--checkpoint_dir "/data/dict/refactoring/checkpoint_ccnn_kasp_0409/0/" \
+--forward_only False
